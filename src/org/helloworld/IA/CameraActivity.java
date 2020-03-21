@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.tensorflow.demo;
+package org.helloworld.IA;
 
 import android.Manifest;
 import android.app.Activity;
@@ -50,9 +50,9 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.nio.ByteBuffer;
-import org.tensorflow.demo.env.ImageUtils;
-import org.tensorflow.demo.env.Logger;
-import org.tensorflow.demoja.R; // Explicit import needed for internal Google builds.
+import org.helloworld.IA.env.ImageUtils;
+import org.helloworld.IA.env.Logger;
+import org.helloworld.IA.R; // Explicit import needed for internal Google builds.
 
 public abstract class CameraActivity extends Activity
     implements OnImageAvailableListener, Camera.PreviewCallback {

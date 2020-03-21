@@ -1,4 +1,4 @@
-package org.tensorflow.demo;
+package org.helloworld.IA;
 
 public class VariablesYDatos {
     public static String coeficientes_ecuacion_distancia[][]={

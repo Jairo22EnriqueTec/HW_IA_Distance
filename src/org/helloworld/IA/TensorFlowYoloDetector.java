@@ -13,21 +13,20 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-package org.tensorflow.demo;
+package org.helloworld.IA;
 
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
 import android.os.Trace;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
-import org.tensorflow.demo.env.Logger;
-import org.tensorflow.demo.env.SplitTimer;
+import org.helloworld.IA.env.Logger;
+import org.helloworld.IA.env.SplitTimer;
 
 /** An object detector that uses TF and a YOLO model to detect objects. */
 public class TensorFlowYoloDetector implements Classifier {

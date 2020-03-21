@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.tensorflow.demo;
+package org.helloworld.IA;
 
 import android.util.Log;
 import android.util.Pair;

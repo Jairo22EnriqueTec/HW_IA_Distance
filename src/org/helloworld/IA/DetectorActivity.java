@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package org.tensorflow.demo;
+package org.helloworld.IA;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
@@ -33,8 +32,6 @@ import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.util.Size;
 import android.util.TypedValue;
-import android.view.Display;
-import android.view.Surface;
 import android.widget.Toast;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -44,15 +41,14 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Vector;
-import org.tensorflow.demo.OverlayView.DrawCallback;
-import org.tensorflow.demo.env.BorderedText;
-import org.tensorflow.demo.env.ImageUtils;
-import org.tensorflow.demo.env.Logger;
-import org.tensorflow.demo.tracking.MultiBoxTracker;
-import org.tensorflow.demoja.R; // Explicit import needed for internal Google builds.
+import org.helloworld.IA.OverlayView.DrawCallback;
+import org.helloworld.IA.env.BorderedText;
+import org.helloworld.IA.env.ImageUtils;
+import org.helloworld.IA.env.Logger;
+import org.helloworld.IA.tracking.MultiBoxTracker;
+import org.helloworld.IA.R; // Explicit import needed for internal Google builds.
 
-import static org.tensorflow.demo.ClassifierActivity.PalabraActual;
-import static org.tensorflow.demo.VariablesYDatos.coeficientes_ecuacion_distancia;
+import static org.helloworld.IA.VariablesYDatos.coeficientes_ecuacion_distancia;
 
 /**
  * An activity that uses a TensorFlowMultiBoxDetector and ObjectTracker to detect and then track

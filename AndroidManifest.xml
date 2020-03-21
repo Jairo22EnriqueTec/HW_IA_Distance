@@ -16,7 +16,7 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.tensorflow.demoja">
+    package="org.helloworld.IA">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
@@ -32,7 +32,7 @@
         android:label="@string/app_name"
         android:icon="@drawable/ic_launcher_hw_good"
         android:theme="@style/MaterialTheme">
-        <activity android:name="org.tensorflow.demo.DetectorActivity"
+        <activity android:name="org.helloworld.IA.DetectorActivity"
                   android:screenOrientation="portrait"
                   android:label="@string/activity_name_classification">
             <intent-filter>

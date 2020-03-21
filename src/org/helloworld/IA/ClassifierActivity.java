@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.tensorflow.demo;
+package org.helloworld.IA;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -33,8 +33,6 @@ import android.util.Log;
 import android.util.Size;
 import android.util.TypedValue;
 
-import android.view.Display;
-import android.view.Surface;
 import android.widget.Toast;
 
 import java.util.List;
@@ -42,11 +40,11 @@ import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Vector;
-import org.tensorflow.demo.OverlayView.DrawCallback;
-import org.tensorflow.demo.env.BorderedText;
-import org.tensorflow.demo.env.ImageUtils;
-import org.tensorflow.demo.env.Logger;
-import org.tensorflow.demoja.R; // Explicit import needed for internal Google builds.
+import org.helloworld.IA.OverlayView.DrawCallback;
+import org.helloworld.IA.env.BorderedText;
+import org.helloworld.IA.env.ImageUtils;
+import org.helloworld.IA.env.Logger;
+import org.helloworld.IA.R; // Explicit import needed for internal Google builds.
 
 public class ClassifierActivity extends CameraActivity implements OnImageAvailableListener {
   private static final Logger LOGGER = new Logger();

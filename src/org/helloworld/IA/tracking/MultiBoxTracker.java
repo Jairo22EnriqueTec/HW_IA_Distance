@@ -13,7 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-package org.tensorflow.demo.tracking;
+package org.helloworld.IA.tracking;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -32,11 +32,12 @@ import android.widget.Toast;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import org.tensorflow.demo.Classifier.Recognition;
-import org.tensorflow.demo.DetectorActivity;
-import org.tensorflow.demo.env.BorderedText;
-import org.tensorflow.demo.env.ImageUtils;
-import org.tensorflow.demo.env.Logger;
+
+import org.helloworld.IA.DetectorActivity;
+import org.helloworld.IA.env.BorderedText;
+import org.helloworld.IA.env.ImageUtils;
+import org.helloworld.IA.env.Logger;
+import org.helloworld.IA.Classifier;
 
 /**
  * A tracker wrapping ObjectTracker that also handles non-max suppression and matching existing
@@ -159,7 +160,7 @@ public class MultiBoxTracker {
   }
 
   public synchronized void trackResults(
-      final List<Recognition> results, final byte[] frame, final long timestamp) {
+          final List<Classifier.Recognition> results, final byte[] frame, final long timestamp) {
     logger.i("Processing %d results from %d", results.size(), timestamp);
     processResults(timestamp, results, frame);
   }
@@ -248,13 +249,13 @@ public class MultiBoxTracker {
   }
 
   private void processResults(
-      final long timestamp, final List<Recognition> results, final byte[] originalFrame) {
-    final List<Pair<Float, Recognition>> rectsToTrack = new LinkedList<Pair<Float, Recognition>>();
+          final long timestamp, final List<Classifier.Recognition> results, final byte[] originalFrame) {
+    final List<Pair<Float, Classifier.Recognition>> rectsToTrack = new LinkedList<Pair<Float, Classifier.Recognition>>();
 
     screenRects.clear();
     final Matrix rgbFrameToScreen = new Matrix(getFrameToCanvasMatrix());
 
-    for (final Recognition result : results) {
+    for (final Classifier.Recognition result : results) {
       if (result.getLocation() == null) {
         continue;
       }
@@ -273,7 +274,7 @@ public class MultiBoxTracker {
         continue;
       }
 
-      rectsToTrack.add(new Pair<Float, Recognition>(result.getConfidence(), result));
+      rectsToTrack.add(new Pair<Float, Classifier.Recognition>(result.getConfidence(), result));
     }
 
     if (rectsToTrack.isEmpty()) {
@@ -283,7 +284,7 @@ public class MultiBoxTracker {
 
     if (objectTracker == null) {
       trackedObjects.clear();
-      for (final Pair<Float, Recognition> potential : rectsToTrack) {
+      for (final Pair<Float, Classifier.Recognition> potential : rectsToTrack) {
         final TrackedRecognition trackedRecognition = new TrackedRecognition();
         trackedRecognition.detectionConfidence = potential.first;
         trackedRecognition.location = new RectF(potential.second.getLocation());
@@ -311,7 +312,7 @@ public class MultiBoxTracker {
 
 
     logger.i("%d rects to track", rectsToTrack.size());
-    for (final Pair<Float, Recognition> potential : rectsToTrack) {
+    for (final Pair<Float, Classifier.Recognition> potential : rectsToTrack) {
       handleDetection(originalFrame, timestamp, potential);
     }
   }
@@ -352,7 +353,7 @@ public class MultiBoxTracker {
   }
 
   private void handleDetection(
-      final byte[] frameCopy, final long timestamp, final Pair<Float, Recognition> potential) {
+      final byte[] frameCopy, final long timestamp, final Pair<Float, Classifier.Recognition> potential) {
     final ObjectTracker.TrackedObject potentialObject =
         objectTracker.trackObject(potential.second.getLocation(), timestamp, frameCopy);
 

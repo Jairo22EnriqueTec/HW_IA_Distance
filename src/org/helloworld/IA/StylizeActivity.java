@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.tensorflow.demo;
+package org.helloworld.IA;
 
 import android.app.UiModeManager;
 import android.content.Context;
@@ -56,11 +56,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Vector;
 import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
-import org.tensorflow.demo.OverlayView.DrawCallback;
-import org.tensorflow.demo.env.BorderedText;
-import org.tensorflow.demo.env.ImageUtils;
-import org.tensorflow.demo.env.Logger;
-import org.tensorflow.demoja.R; // Explicit import needed for internal Google builds.
+import org.helloworld.IA.OverlayView.DrawCallback;
+import org.helloworld.IA.env.BorderedText;
+import org.helloworld.IA.env.ImageUtils;
+import org.helloworld.IA.env.Logger;
+import org.helloworld.IA.R; // Explicit import needed for internal Google builds.
 
 /**
  * Sample activity that stylizes the camera preview according to "A Learned Representation For
